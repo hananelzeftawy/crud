@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CRUD System</title>
+
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    
+  <div class="container position-relative shadow my-5 py-5 px-5">
+    
+    <button style="display: none;" class="close" id="close" onclick="switchBtn('toAdd'); clearForm(); hideCloseBtn()"><i class="fas fa-times-circle"></i></button>
+    
+    <h1>CRUD System</h1>
+
+    <label for="productName">productName:</label>
+    <input type="text"  class="form-control user-input" id="productName">
+    <p class="validate text-danger" id="validateName">Please Enter Product Name</p>
+
+
+
+    <label for="">productCategory:</label>
+    <input type="text"  class="form-control user-input" id="productCategory" >
+    <p class="validate text-danger" id="validateCategory">Please Enter Product Category</p>
+
+    <label for="">productPrice:</label>
+    <input type="text"  class="form-control user-input" id="productPrice">
+    <p class="validate text-danger" id="validatePrice">Please Enter Product Price</p>
+
+    <label for="">productDescription:</label>
+   <textarea  id="productDescription" class="form-control user-input" ></textarea>
+   <p class="validate text-danger" id="validateDescription">Please Enter Product Description</p>
+
+
+   <button class="btn btn-outline-info mt-3" id="addBtn"  onclick="addProduct()" >add product</button>
+   <button class="btn btn-outline-info mt-3" id="updateBtn" style="display: none"  onclick="updateProduct(); hideCloseBtn();" >Update product</button>
+   <button class="btn btn-outline-info mt-3" onclick="clearForm()">clear</button>
+
+
+  </div>
+
+
+
+  <input type="text" placeholder="search..." class="form-control w-25 mx-auto" id="searchInput" onkeyup="searchProduct()">
+
+  <table class="table container text-center table-striped table-hover" id="myTable">
+    <thead>
+      <tr>
+        <th>index:</th>
+        <th>name:</th>
+        <th>category:</th>
+        <th>price:</th>
+        <th>description:</th>
+        <th>update:</th>
+        <th>delete:</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+        <!-- Added From JavaScript -->
+    </tbody>
+  </table>
+
+
+
+  <script src="js/main.js"></script>
+
+
+</body>
+</html>
